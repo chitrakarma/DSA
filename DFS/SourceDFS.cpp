@@ -65,7 +65,7 @@ void Graph::DFS(pair<int, int> node, vector<vector<int>>& grid) {
     list<pair<int, int> >::iterator i;
     for (i = adj_nodes[node].begin(); i != adj_nodes[node].end(); ++i) {
         //if ((!visited[*i]) && ((node.first != 0)&&(node.first != (grid.size() - 1))&&(node.second != 0)&&(node.second != (grid[0].size()))))
-        if (!visited[*i])
+        if ((!visited[*i]) && (grid[node.first][node.second] != 0) && ((node.first != 0) && (node.first != (grid.size() - 1)) && ((node.second != 0)&&(node.second != (grid[0].size() - 1)))))
             DFS(*i, grid);
     }
 }
